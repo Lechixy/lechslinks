@@ -1,0 +1,104 @@
+:root {
+    --border-color: rgba(22, 22, 22, 0.685);
+    --logo-color: rgb(255, 255, 255);
+    --logo-bg-color: rgba(58, 58, 58, 0.568);
+    --logo-after-color: rgba(119, 119, 119, 0.562);
+    --bg-color-gradient: linear-gradient(45deg, rgb(0, 0, 0), rgb(26, 26, 26));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    min-height: 100vh;
+    background: var(--bg-color-gradient);
+}
+
+.social-links {
+    padding-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    height: 90px;
+    width: 90px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: var(--logo-bg-color);
+    border-radius: 50%;
+    border: 5px solid var(--border-color);
+    transition: border-radius 0.5s, border 0.5s, background 0.5s;
+}
+
+a i {
+    font-size: 50px;
+    color: var(--logo-color);
+}
+
+a:hover {
+    background: var(--logo-after-color);
+    border-radius: 25%;
+    border: 10px solid var(--border-color);
+}
+
+a .fa-instagram {
+    transition: all 0.5s ease-in-out;
+}
+
+a:hover .fa-instagram {
+    color: #bc318f;
+}
+
+a .fa-twitch {
+    transition: all 0.5s ease-in-out;
+}
+
+a:hover .fa-twitch {
+    color: #9b58ff;
+}
+
+a .fa-steam {
+    transition: all 0.5s ease-in-out;
+}
+
+a:hover .fa-steam {
+    color: #00adee;
+}
+
+a .fa-spotify {
+    transition: all 0.5s ease-in-out;
+}
+
+a:hover .fa-spotify {
+    color: #1DB954;
+}
+
+a .fa-github {
+    transition: all 0.5s ease-in-out;
+}
+
+a:hover .fa-github {
+    color: #000000;
+}
+
+a .fa-discord {
+    transition: all 0.5s ease-in-out;
+}
+
+a:hover .fa-discord {
+    color: #5865F2;
+}
+
+@media only screen and (max-width: 600px){
+    .social-links {
+        padding-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
