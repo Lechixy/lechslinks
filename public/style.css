@@ -16,9 +16,20 @@
     background: var(--bg-color-gradient);
 }
 
+p.text{
+    padding-top: 50px;
+    color: #7e7e7e;
+    text-align: center;
+}
+
+span.underline{
+    color: aqua;
+}
+
 .social-links {
-    padding-top: 200px;
+    padding-top: 250px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -95,10 +106,10 @@ a:hover .fa-discord {
     color: #5865F2;
 }
 
-@media only screen and (max-width: 600px){
+/* @media only screen and (max-width: 600px){
     .social-links {
         padding-top: 100px;
         display: flex;
         flex-wrap: wrap;
     }
-}
+} */
