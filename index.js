@@ -11,6 +11,9 @@ app.use(express.static('public'))
 
 app.use('/', Main)
 
+app.use((req, res, next) => {
+    res.status(404).render('errors/404')
+})
 
 app.listen(port, () => {
     console.log(`Listening to http://localhost:${port} on port ` + port)

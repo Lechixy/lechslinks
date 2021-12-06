@@ -1,0 +1,166 @@
+:root {
+    --border-color: rgba(22, 22, 22, 0.685);
+    --logo-color: rgb(255, 255, 255);
+    --logo-bg-color: rgba(58, 58, 58, 0.568);
+    --logo-after-color: rgba(119, 119, 119, 0.562);
+    --bg-color-gradient: linear-gradient(45deg, rgb(0, 0, 0), rgb(26, 26, 26));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    min-height: 300vh;
+    background: var(--bg-color-gradient);
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.rgb{
+    color: #ff0075;
+    text-shadow: 0 0 10px #ff0075,
+    0 0 20px #ff0075;
+    animation: hue 10s linear infinite;
+}
+
+@keyframes hue{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+.social-links {
+    padding-top: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.below{
+    padding-top: 40px;
+    margin: auto;
+}
+
+.bio{
+    color: rgb(143, 143, 143);
+    font-family: monospace;
+    text-align: center;
+    justify-content: space-between;
+    display: list-item;
+}
+
+#more{
+    padding-top: 200px;
+    font-family: 'Courier New';
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+/* h3{
+    margin-top: 15px;
+    color: #ffffff;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+} */
+
+a#app {
+    height: 90px;
+    width: 90px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: var(--logo-bg-color);
+    border-radius: 50%;
+    border: 5px solid var(--border-color);
+    transition: border-radius 0.5s, border 0.5s, background 0.5s;
+}
+
+a#app i {
+    font-size: 50px;
+    color: var(--logo-color);
+}
+
+hr{
+    padding-top: 100px;
+    border: none;
+    overflow: visible;
+}
+
+a#app:hover {
+    background: var(--logo-after-color);
+    border-radius: 25%;
+    border: 10px solid var(--border-color);
+}
+
+a#app .fa-instagram {
+    transition: all 0.5s ease-in-out;
+}
+
+a#app:hover .fa-instagram {
+    color: #bc318f;
+    transform: rotate(360deg);
+}
+
+a#app .fa-twitch {
+    transition: all 0.5s ease-in-out;
+}
+
+a#app:hover .fa-twitch {
+    color: #9b58ff;
+    transform: rotate(360deg);
+}
+
+a#app .fa-steam {
+    transition: all 0.5s ease-in-out;
+}
+
+a#app:hover .fa-steam {
+    color: #00adee;
+    transform: rotate(360deg);
+}
+
+a#app .fa-spotify {
+    transition: all 0.5s ease-in-out;
+}
+
+a#app:hover .fa-spotify {
+    color: #1DB954;
+    transform: rotate(360deg);
+}
+
+a#app .fa-github {
+    transition: all 0.5s ease-in-out;
+}
+
+a#app:hover .fa-github {
+    color: #000000;
+    transform: rotate(360deg);
+}
+
+a#app .fa-discord {
+    transition: all 0.5s ease-in-out;
+}
+
+a#app:hover .fa-discord {
+    color: #5865F2;
+    transform: rotate(360deg);
+}
+
+/* @media only screen and (max-width: 600px){
+    .social-links {
+        padding-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+} */
