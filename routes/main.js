@@ -1,24 +1,29 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('main')
+    res.render(`main`)
 })
 
 router.get('/heart', (req, res) => {
-    res.render('subs/heart')
+
+    res.render(`other${req.url}`)
 })
 
 router.get('/cube', (req, res) => {
-    res.render('subs/cube')
+    res.render(`other${req.url}`)
 })
 
 router.get('/color', (req, res) => {
-    res.render('subs/color')
+    res.render(`other${req.url}`)
 })
 
 router.get('/countdown', (req, res) => {
-    res.render('subs/countdown')
+    res.render(`other${req.url}`)
+})
+
+router.get('/anime', (req, res) => {
+    res.render(`other${req.url}`)
 })
 
 const socials = {
@@ -30,18 +35,13 @@ const socials = {
     discord: `https://discord.com/oauth2/authorize?client_id=753906874729889853&permissions=8&scope=bot%20applications.commands`
 }
 
-router.get('/send', (req, res) => {
-
-    if(!req.query.app) return res.render('errors/400')
-
-    res.redirect(`${socials[`${req.query.app}`]}`)
-})
-
 router.get('/redirect', (req, res) => {
 
     if(!req.query.app) return res.render('errors/400')
 
-    res.redirect(`${socials[`${req.query.app}`]}`)
+    let app = socials[req.query.app]
+    console.log(`redirecting to ${req.query.app}`)
+    res.redirect(app)
 })
 
 module.exports = router;

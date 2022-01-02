@@ -1,11 +1,18 @@
-const http = require('http')
 const express = require('express')
-const favicon = require('serve-favicon')
+const cors = require('cors')
 
 const app = express()
 const port = process.env.PORT || 7373
 const Main = require('./routes/main')
 
+app.use((req, res, next) => {
+
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    next();
+});
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
