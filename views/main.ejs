@@ -38,11 +38,13 @@
             </a>
         </div>
         <h2 id="more" class="underline">Other stuffs</h2>
+
         <div class="below">
-            <div class="pages">
+            <div class="pages" id="pages">
                 <nav>
                     <div class="dropdown">
                         <a href="/" class="home">Home</a>
+                        <a href="/#social" class="home">Social</a>
 
 
                         <div class="subs">
@@ -58,34 +60,53 @@
                 </nav>
             </div>
 
-            <p class="bio">
-                <span class="rgb">"What we do in life, echoes in eternity."<br>~Tuğkan "Elraenn" Gönültaş
-                <br><br>
-                
-                </span>
+            <p class="bio rgb">
+                "What we do in life, echoes in eternity."<br>~Tuğkan "Elraenn" Gönültaş
             </p>
         </div>
+
     </div>
 </body>
 <script>
-    setInterval(createFlake, 200)
+    setInterval(createFlake, 150)
+    window.addEventListener("resize", removeParticles)
 
     function createFlake() {
         const snowflake = document.createElement("i");
         snowflake.classList.add('fas')
         snowflake.classList.add('fa-snowflake')
+
+        let duration = Math.random() * 10 + 2 + 's';
+
         snowflake.style.left = Math.random() * window.outerWidth + 'px';
-        snowflake.style.animationDuration = Math.random() * 12 + 2 + 's';
+        snowflake.style.animationDuration = duration;
         snowflake.style.opacity = Math.random();
-        snowflake.style.fontSize = (Math.random() * 3) + 6 + 'px';
-        snowflake.style.transform = `rotate(${Math.random() * -50 + 250}deg)`
+        snowflake.style.fontSize = (Math.random() * 4) + 7 + 'px';
 
         document.body.appendChild(snowflake)
 
+        let toms = duration.substr(0, duration.length-1)
+        let splitted = toms.split('.')
+        let lastms = `${splitted[0]}${splitted[1].substr(0, 1)}00`
+
         setTimeout(() => {
             snowflake.remove()
-        }, 5000)
+        }, parseInt(lastms))
     }
+
+    function removeParticles() {
+        console.log("Cleared all particles because window is resized to another size!")
+        let particles = document.querySelectorAll("i")
+
+        particles.forEach(x => {
+            if(x.classList.contains("fa-snowflake")) {
+                x.remove()
+                clearTimeout()
+            } else return;
+        })
+    }
+
+
 </script>
 
 </html>
